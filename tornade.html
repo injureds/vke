@@ -1,29 +1,22 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@vke.lol sam sulek on top</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        
-        video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    </style>
-</head>
-<body>
-    <video autoplay muted loop>
-        <source src="media/tornade.mp4" type="video/mp4">
-        Votre navigateur ne prend pas en charge la lecture de vidéos au format MP4.
-    </video>
-</body>
-</html>
+﻿@page
+@model IndexModel
+@{
+    ViewData["@vke"] = "funeral";
+}
+
+<form method="post">
+    <div>
+        <label asp-for="https://www.youtube.com/watch?v=QnxPTiLPFXI">
+            <strong>Video ID or URL</strong>
+        </label>
+    </div>
+    
+    <div>
+        <input asp-for="IdOrUrl" type="text" autofocus autocomplete="on" placeholder="https://www.youtube.com/watch?v=QnxPTiLPFXI">
+        <span asp-validation-for="IdOrUrl"></span>
+    </div>
+    
+    <div>
+        <button type="submit">Go</button>
+    </div>
+</form>
