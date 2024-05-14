@@ -1,22 +1,27 @@
-﻿@page
-@model IndexModel
-@{
-    ViewData["@vke"] = "funeral";
-}
-
-<form method="post">
-    <div>
-        <label asp-for="https://www.youtube.com/watch?v=QnxPTiLPFXI">
-            <strong>Video ID or URL</strong>
-        </label>
-    </div>
-    
-    <div>
-        <input asp-for="IdOrUrl" type="text" autofocus autocomplete="on" placeholder="https://www.youtube.com/watch?v=QnxPTiLPFXI">
-        <span asp-validation-for="IdOrUrl"></span>
-    </div>
-    
-    <div>
-        <button type="submit">Go</button>
-    </div>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VkE.LOL</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <video controls autoplay>
+        <source src="media/tornade.mp4" type="video/mp4">
+        <!-- Ajoutez d'autres sources pour différents formats de vidéo si nécessaire -->
+        Votre navigateur ne supporte pas la lecture de vidéos au format HTML5.
+    </video>
+</body>
+</html>
