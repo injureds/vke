@@ -4,8 +4,201 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>evils</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
   <style>
-    html,body{margin:0;padding:0;height:100%;overflow:hidden;background-color:black;font-family:Arial,sans-serif;color:white}body{background-image:url('https://i.imgur.com/0plMk93.png');background-size:50%;background-position:center;background-attachment:fixed;background-repeat:no-repeat}.m{display:flex;justify-content:flex-start;align-items:center;height:100vh;padding:20px;box-sizing:border-box;transition:all .3s ease}.l{height:92%;width:100%;background-color:rgba(0,0,0,.7);padding:20px;box-sizing:border-box;border:2px solid #444;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;transition:width .3s ease}.r{position:absolute;top:200px;right:-100%;height:60%;width:28%;background-color:rgba(0,0,0,.7);padding:15px;box-sizing:border-box;border:2px solid #444;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;text-align:center;transition:right .5s ease;border-radius:10px}.r .space{height:40px}.g{font-size:28px;margin-bottom:20px;text-shadow:0 0 10px rgba(128,128,128,.8),0 0 20px rgba(128,128,128,.6),0 0 30px rgba(128,128,128,.4)}.i input[type="text"],.i input[type="submit"]{width:50%;padding:6px;border:1px solid #333;background-color:#333;color:white;margin-bottom:15px;box-sizing:border-box;border-radius:3px}.i input[type="submit"]{width:60%;padding:10px;background-color:black;color:white;cursor:pointer;border-radius:3px;text-shadow:0 0 10px rgba(255,255,255,.8),0 0 20px rgba(255,255,255,.6),0 0 30px rgba(255,255,255,.4);border:none;transition:background-color .3s,text-shadow .3s ease}.i input[type="submit"]:hover{background-color:#444;text-shadow:0 0 15px rgba(255,255,255,1),0 0 25px rgba(255,255,255,.8)}nav{text-align:center;margin-top:20px}nav a{color:white;text-decoration:none;margin:0 20px;font-size:18px;text-shadow:0 0 10px rgba(255,255,255,.8),0 0 20px rgba(255,255,255,.6),0 0 30px rgba(255,255,255,.4);transition:all .3s ease}nav a:hover{text-shadow:0 0 15px rgba(255,255,255,1),0 0 25px rgba(255,255,255,.8)}.toggle-btn{background-color:black;color:white;padding:10px 20px;border:none;cursor:pointer;border-radius:3px;text-shadow:0 0 10px rgba(255,255,255,.8),0 0 20px rgba(255,255,255,.6),0 0 30px rgba(255,255,255,.4);transition:all .3s ease}.toggle-btn:hover{background-color:#444;text-shadow:0 0 15px rgba(255,255,255,1),0 0 25px rgba(255,255,255,.8)}.contact-btn{background-color:black;color:white;padding:10px 20px;font-size:18px;text-decoration:none;border-radius:3px;text-shadow:0 0 10px rgba(255,255,255,.8),0 0 20px rgba(255,255,255,.6),0 0 30px rgba(255,255,255,.4);transition:all .3s ease}.contact-btn:hover{background-color:#444;text-shadow:0 0 15px rgba(255,255,255,1),0 0 25px rgba(255,255,255,.8)}
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background-color: black;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    body {
+      background-image: url('https://i.imgur.com/0plMk93.png');
+      background-size: 50%;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    .m {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+      transition: all .3s ease;
+    }
+
+    .l {
+      height: 92%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, .7);
+      padding: 20px;
+      box-sizing: border-box;
+      border: 2px solid #444;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      transition: width .3s ease;
+    }
+
+    .r {
+      position: absolute;
+      top: 200px;
+      right: -100%;
+      height: 70%;
+      width: 30%;
+      background-color: rgba(0, 0, 0, .7);
+      padding: 25px;
+      box-sizing: border-box;
+      border: 2px solid #444;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transition: right .5s ease;
+      border-radius: 10px;
+    }
+
+    .pseudo-button {
+      padding: 10px 20px;
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+      text-shadow: 0 0 10px rgba(255, 255, 255, .8);
+      cursor: pointer;
+      transition: all .3s ease;
+      margin-bottom: 10px;
+      border: none;
+      width: 80%;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    .pseudo-button:hover {
+      background-color: #444;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 1);
+    }
+
+    /* Animation d'ouverture du profil */
+    .profile-panel {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.8);
+      width: 250px;
+      height: 250px;
+      background-color: rgba(51, 51, 51, 0.8);
+      padding: 20px;
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+      cursor: move;
+      text-align: center;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 0.5s ease; /* Transition fluide */
+    }
+
+    .profile-panel.show {
+      display: block;
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1); /* Redimensionnement et apparition fluide */
+    }
+
+    .profile-panel .profile-img img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .profile-panel .bio {
+      font-size: 14px;
+      color: gray;
+      font-weight: bold;
+      margin-top: -10px;
+    }
+
+    .profile-panel h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      text-shadow: 0 0 10px rgba(255, 255, 255, .8);
+      transition: all .3s ease;
+    }
+
+    nav a:hover {
+      text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 25px rgba(255, 255, 255, .8);
+    }
+
+    .toggle-btn {
+      background-color: black;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 3px;
+      text-shadow: 0 0 10px rgba(255, 255, 255, .8);
+      transition: all .3s ease;
+    }
+
+    .toggle-btn:hover {
+      background-color: #444;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 25px rgba(255, 255, 255, .8);
+    }
+
+    .contact-btn {
+      background-color: black;
+      color: white;
+      padding: 10px 20px;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 3px;
+      text-shadow: 0 0 10px rgba(255, 255, 255, .8);
+      transition: all .3s ease;
+    }
+
+    .contact-btn:hover {
+      background-color: #444;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 25px rgba(255, 255, 255, .8);
+    }
+
+    .profile-panel .telegram-link {
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      margin-top: 10px;
+      text-decoration: none;
+    }
+
+    .profile-panel .telegram-link:hover {
+      color: #0088cc;
+    }
   </style>
 </head>
 <body>
@@ -19,40 +212,26 @@
   <main class="m">
     <div class="l">
       <h2 class="g">Родился в аду, вырос в раю</h2>
-      <button class="toggle-btn" onclick="a()">ISP</button>
+      <button class="toggle-btn" onclick="togglePseudoSelection()">council</button>
     </div>
     <div class="r">
       <div class="space"></div>
-      <h1>lookup</h1>
-      <form class="i" onsubmit="b(event)">
-        <input type="text" id="c1" placeholder="Enter an IP address" required>
-        <input type="submit" value="Search">
-      </form>
-      <div id="c2" style="margin-top:20px;"></div>
+      <button class="pseudo-button" onclick="toggleProfile('injuring', 'https://files.catbox.moe/lhzp81.jpg', 'devil runs deep', 'https://t.me/lnjuring')">injuring</button>
+      <button class="pseudo-button" onclick="toggleProfile('syndrama', 'https://files.catbox.moe/xrpjzo.jpg', 'corny', 'https://t.me/syndrama')">syndrama</button>
+      <button class="pseudo-button" onclick="toggleProfile('kdrama', 'https://files.catbox.moe/0cqqy5.webp', 'love syndrama', 'https://t.me/doxxer')">kdrama</button>
     </div>
   </main>
-  <script>
-    async function b(e) {
-      e.preventDefault();
-      var t = document.getElementById('c1').value.trim(), r = document.getElementById('c2');
-      if (t) {
-        try {
-          let n = await fetch(`https://ip-api.com/json/${t}`); // Changé http en https
-          let d = await n.json();
-          if (d.status === "fail") {
-            r.innerHTML = `<p style="color:red;">Invalid IP address.</p>`;
-          } else {
-            r.innerHTML = `<p><strong>IP:</strong> ${d.query}</p><p><strong>ISP:</strong> ${d.isp}</p><p><strong>City:</strong> ${d.city}</p><p><strong>Country:</strong> ${d.country}</p><p><strong>Region:</strong> ${d.regionName}</p>`;
-          }
-        } catch (o) {
-          r.innerHTML = `<p style="color:red;">Error fetching data.</p>`;
-        }
-      } else {
-        r.innerHTML = `<p style="color:red;">Please enter an IP address.</p>`;
-      }
-    }
 
-    function a() {
+  <!-- Profile Panel -->
+  <div id="profile-panel" class="profile-panel">
+    <div class="profile-img" id="profile-img"></div>
+    <h3 id="profile-name"></h3>
+    <p id="profile-bio" class="bio"></p>
+    <a href="#" id="telegram-link" class="telegram-link" target="_blank">Telegram</a>
+  </div>
+
+  <script>
+    function togglePseudoSelection() {
       const t = document.querySelector('.r');
       const e = document.querySelector('.l');
       if (t.style.right === '0px') {
@@ -61,6 +240,25 @@
       } else {
         t.style.right = '0px';
         e.style.width = '70%';
+      }
+    }
+
+    function toggleProfile(name, imgUrl, bio, telegramLink) {
+      const panel = document.getElementById('profile-panel');
+      const img = document.getElementById('profile-img');
+      const profileName = document.getElementById('profile-name');
+      const profileBio = document.getElementById('profile-bio');
+      const telegramButton = document.getElementById('telegram-link');
+      
+      // Si le profil est déjà affiché, on le ferme
+      if (panel.classList.contains('show')) {
+        panel.classList.remove('show');
+      } else {
+        img.innerHTML = `<img src="${imgUrl}" class="profile-img" alt="Profile Image">`;
+        profileName.innerText = name;
+        profileBio.innerText = bio;
+        telegramButton.href = telegramLink;
+        panel.classList.add('show');
       }
     }
   </script>
