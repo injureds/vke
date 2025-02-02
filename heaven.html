@@ -34,10 +34,11 @@
   <script>
     async function b(e) {
       e.preventDefault();
-      var t = document.getElementById('c1').value.trim(),r = document.getElementById('c2');
+      var t = document.getElementById('c1').value.trim(), r = document.getElementById('c2');
       if (t) {
         try {
-          let n = await fetch(`http://ip-api.com/json/${t}`),d = await n.json();
+          let n = await fetch(`https://ip-api.com/json/${t}`); // Changé http en https
+          let d = await n.json();
           if (d.status === "fail") {
             r.innerHTML = `<p style="color:red;">Invalid IP address.</p>`;
           } else {
