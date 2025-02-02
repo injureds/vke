@@ -5,206 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>evils</title>
   <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background-color: black;
-      font-family: Arial, sans-serif;
-      color: white;
-    }
-    body {
-      background-image: url('https://i.imgur.com/0plMk93.png');
-      background-size: 50%;
-      background-position: center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-    }
-    .main-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 100vh;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-    .left-panel {
-      width: 30%;
-      height: 80%;
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 20px;
-      box-sizing: border-box;
-      border: 2px solid #444;
-    }
-    .right-panel {
-      width: 65%;
-      height: 80%;
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 20px;
-      box-sizing: border-box;
-      border: 2px solid #444;
-      overflow-y: auto;
-    }
-    h1, h2 {
-      text-align: center;
-      margin-top: 0;
-    }
-    .form-group {
-      margin-bottom: 15px;
-    }
-    .form-group label {
-      display: block;
-      margin-bottom: 5px;
-    }
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      background-color: #333;
-      color: white;
-      box-sizing: border-box;
-    }
-    .form-group textarea {
-      resize: none;
-      height: 200px; /* Augmenter la hauteur de la zone de texte */
-    }
-    .submit-btn {
-      width: 100%;
-      padding: 10px;
-      background-color: white;
-      color: black;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    .submit-btn:hover {
-      background-color: #f1f1f1;
-    }
-    .post {
-      border-bottom: 1px solid #555;
-      padding: 10px 0;
-      margin-bottom: 10px;
-    }
-    .post:last-child {
-      border: none;
-    }
-    .post .username {
-      font-weight: bold;
-    }
-    .post .title {
-      font-size: 18px;
-      color: #808080;
-      cursor: pointer;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4); /* Glow effect */
-    }
-    .post .message {
-      display: none;
-      margin-top: 10px;
-      padding: 10px;
-      background-color: #222;
-    }
-    .post.open .message {
-      display: block;
-    }
-    /* Styling for the navigation links */
-    nav {
-      text-align: center;
-      margin-top: 50px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 20px;
-      font-size: 18px;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4); /* Glow effect */
-    }
-    nav a:hover {
-      text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 25px rgba(255, 255, 255, 0.8); /* Stronger glow on hover */
-    }
+    html,body{margin:0;padding:0;height:100%;overflow:hidden;background-color:black;font-family:Arial,sans-serif;color:white}body{background-image:url('https://i.imgur.com/0plMk93.png');background-size:50%;background-position:center;background-attachment:fixed;background-repeat:no-repeat}.m{display:flex;justify-content:flex-start;align-items:center;height:100vh;padding:20px;box-sizing:border-box;transition:all .3s ease}.l{height:92%;width:100%;background-color:rgba(0,0,0,.7);padding:20px;box-sizing:border-box;border:2px solid #444;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;transition:width .3s ease}.r{position:absolute;top:200px;right:-100%;height:60%;width:28%;background-color:rgba(0,0,0,.7);padding:15px;box-sizing:border-box;border:2px solid #444;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;text-align:center;transition:right .5s ease;border-radius:10px}.r .space{height:40px}.g{font-size:28px;margin-bottom:20px;text-shadow:0 0 10px rgba(128,128,128,.8),0 0 20px rgba(128,128,128,.6),0 0 30px rgba(128,128,128,.4)}.i input[type="text"],.i input[type="submit"]{width:50%;padding:6px;border:1px solid #333;background-color:#333;color:white;margin-bottom:15px;box-sizing:border-box;border-radius:3px}.i input[type="submit"]{width:60%;padding:10px;background-color:black;color:white;cursor:pointer;border-radius:3px;text-shadow:0 0 10px rgba(255,255,255,.8),0 0 20px rgba(255,255,255,.6),0 0 30px rgba(255,255,255,.4);border:none;transition:background-color .3s,text-shadow .3s ease}.i input[type="submit"]:hover{background-color:#444;text-shadow:0 0 15px rgba(255,255,255,1),0 0 25px rgba(255,255,255,.8)}nav{text-align:center;margin-top:20px}nav a{color:white;text-decoration:none;margin:0 20px;font-size:18px;text-shadow:0 0 10px rgba(255,255,255,.8),0 0 20px rgba(255,255,255,.6),0 0 30px rgba(255,255,255,.4);transition:all .3s ease}nav a:hover{text-shadow:0 0 15px rgba(255,255,255,1),0 0 25px rgba(255,255,255,.8)}.toggle-btn{background-color:black;color:white;padding:10px 20px;border:none;cursor:pointer;border-radius:3px;text-shadow:0 0 10px rgba(255,255,255,.8),0 0 20px rgba(255,255,255,.6),0 0 30px rgba(255,255,255,.4);transition:all .3s ease}.toggle-btn:hover{background-color:#444;text-shadow:0 0 15px rgba(255,255,255,1),0 0 25px rgba(255,255,255,.8)}.contact-btn{background-color:black;color:white;padding:10px 20px;font-size:18px;text-decoration:none;border-radius:3px;text-shadow:0 0 10px rgba(255,255,255,.8),0 0 20px rgba(255,255,255,.6),0 0 30px rgba(255,255,255,.4);transition:all .3s ease}.contact-btn:hover{background-color:#444;text-shadow:0 0 15px rgba(255,255,255,1),0 0 25px rgba(255,255,255,.8)}
   </style>
 </head>
 <body>
-  <!-- Musique qui se lance automatiquement -->
-  <audio autoplay>
-    <source src="https://p.scdn.co/mp3-preview/5f5f17cf694f8d5e6ccadbb5c5f22d90e8f5b87d?cid=774b29d4f13844c495f206cafdad9c86" type="audio/mpeg">
-    Votre navigateur ne prend pas en charge le format audio.
-  </audio>
-
   <header>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="heaven.html">Heaven</a>
+      <a href="index.html" class="toggle-btn">Home</a>
+      <a href="heaven.html" class="toggle-btn">Heaven</a>
+      <a href="https://t.me/lnjuring" class="contact-btn" target="_blank">Contact</a>
     </nav>
   </header>
-
-  <main class="main-container">
-    <div class="left-panel">
-      <h1>Post a Message</h1>
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" placeholder="Enter your username">
-      </div>
-      <div class="form-group">
-        <label for="title">Title</label>
-        <input type="text" id="title" placeholder="Enter message title">
-      </div>
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" placeholder="Write your message..."></textarea>
-      </div>
-      <button class="submit-btn" onclick="postMessage()">Submit</button>
+  <main class="m">
+    <div class="l">
+      <h2 class="g">Родился в аду, вырос в раю</h2>
+      <button class="toggle-btn" onclick="a()">ISP</button>
     </div>
-
-    <div class="right-panel">
-      <h2>Posted Messages</h2>
-      <div id="posts"></div>
+    <div class="r">
+      <div class="space"></div>
+      <h1>lookup</h1>
+      <form class="i" onsubmit="b(event)">
+        <input type="text" id="c1" placeholder="Enter an IP address" required>
+        <input type="submit" value="Search">
+      </form>
+      <div id="c2" style="margin-top:20px;"></div>
     </div>
   </main>
-
-  <footer style="text-align: center; padding: 10px 0; color: white;">
-    © 2000's
-  </footer>
-
   <script>
-    function postMessage() {
-      var username = document.getElementById('username').value.trim();
-      var title = document.getElementById('title').value.trim();
-      var message = document.getElementById('message').value.trim();
-
-      if (username && title && message) {
-        var postsContainer = document.getElementById('posts');
-        
-        var post = document.createElement('div');
-        post.classList.add('post');
-        
-        var usernameElement = document.createElement('p');
-        usernameElement.classList.add('username');
-        usernameElement.textContent = username;
-        
-        var titleElement = document.createElement('p');
-        titleElement.classList.add('title');
-        titleElement.textContent = title;
-        
-        var messageElement = document.createElement('p');
-        messageElement.classList.add('message');
-        messageElement.textContent = message;
-        
-        post.appendChild(usernameElement);
-        post.appendChild(titleElement);
-        post.appendChild(messageElement);
-        
-        titleElement.onclick = function() {
-          post.classList.toggle('open');
-        };
-        
-        postsContainer.insertBefore(post, postsContainer.firstChild);
-        
-        document.getElementById('username').value = '';
-        document.getElementById('title').value = '';
-        document.getElementById('message').value = '';
+    async function b(e) {
+      e.preventDefault();
+      var t = document.getElementById('c1').value.trim(),r = document.getElementById('c2');
+      if (t) {
+        try {
+          let n = await fetch(`http://ip-api.com/json/${t}`),d = await n.json();
+          if (d.status === "fail") {
+            r.innerHTML = `<p style="color:red;">Invalid IP address.</p>`;
+          } else {
+            r.innerHTML = `<p><strong>IP:</strong> ${d.query}</p><p><strong>ISP:</strong> ${d.isp}</p><p><strong>City:</strong> ${d.city}</p><p><strong>Country:</strong> ${d.country}</p><p><strong>Region:</strong> ${d.regionName}</p>`;
+          }
+        } catch (o) {
+          r.innerHTML = `<p style="color:red;">Error fetching data.</p>`;
+        }
       } else {
-        alert('Please fill in all fields.');
+        r.innerHTML = `<p style="color:red;">Please enter an IP address.</p>`;
+      }
+    }
+
+    function a() {
+      const t = document.querySelector('.r');
+      const e = document.querySelector('.l');
+      if (t.style.right === '0px') {
+        t.style.right = '-100%';
+        e.style.width = '100%';
+      } else {
+        t.style.right = '0px';
+        e.style.width = '70%';
       }
     }
   </script>
